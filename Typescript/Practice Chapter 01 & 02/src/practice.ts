@@ -187,7 +187,7 @@ const sumOfNumber = (...num: number[]): number => {
   );
 };
 
-console.log(sumOfNumber(10, 20, 30));
+// console.log(sumOfNumber(10, 20, 30));
 
 // Task 7: Type Assertion and Narrowing
 // Objective: Write a function that behaves differently based on the input type.
