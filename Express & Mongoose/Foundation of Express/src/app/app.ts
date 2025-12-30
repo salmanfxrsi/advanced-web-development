@@ -1,11 +1,24 @@
 import express, { Application, Request, Response } from "express";
+import fs from "fs";
+import path from "path";
 const app: Application = express();
-const port = 5000;
 
-app.get('/', (req: Request, res: Response) => {
-    res.send('Hello World!');
-})
+app.use(express.json());
 
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`);
-})
+const filePath = path.join(__dirname, "../../db/todo.json");
+
+app.get("/", (req: Request, res: Response) => {
+  res.send("Hello, Welcome To Todos App!");
+});
+
+app.get("/todos", (req: Request, res: Response) => {
+  const data = fs.readFileSync(filePath, { encoding: "utf-8" });
+  res.json(data);
+});
+
+app.post("/todos/create-todo", (req: Request, res: Response) => {
+  const { title, description, createdTime } = req.body;
+  res.send("Hello World!");
+});
+
+export default app;

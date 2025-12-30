@@ -1,0 +1,52 @@
+[
+  {
+    "title": "Buy groceries",
+    "description": "Milk, bread, eggs, and fruits",
+    "createdTime": "2025-12-30T10:00:00Z"
+  },
+  {
+    "title": "Finish project report",
+    "description": "Complete the final draft of the quarterly report",
+    "createdTime": "2025-12-30T11:15:00Z"
+  },
+  {
+    "title": "Call John",
+    "description": "Discuss the meeting agenda for next week",
+    "createdTime": "2025-12-30T12:30:00Z"
+  },
+  {
+    "title": "Workout",
+    "description": "30 minutes cardio and strength training",
+    "createdTime": "2025-12-30T14:00:00Z"
+  },
+  {
+    "title": "Read a book",
+    "description": "Read at least 50 pages of 'Atomic Habits'",
+    "createdTime": "2025-12-30T15:30:00Z"
+  },
+  {
+    "title": "Write blog post",
+    "description": "Draft a blog post about TypeScript best practices",
+    "createdTime": "2025-12-30T16:45:00Z"
+  },
+  {
+    "title": "Plan weekend trip",
+    "description": "Decide on destination and book hotel",
+    "createdTime": "2025-12-30T17:30:00Z"
+  },
+  {
+    "title": "Clean workspace",
+    "description": "Organize desk, files, and clear old papers",
+    "createdTime": "2025-12-30T18:00:00Z"
+  },
+  {
+    "title": "Update resume",
+    "description": "Add recent projects and skills",
+    "createdTime": "2025-12-30T19:15:00Z"
+  },
+  {
+    "title": "Meditation",
+    "description": "15 minutes of mindfulness meditation",
+    "createdTime": "2025-12-30T20:00:00Z"
+  }
+]
