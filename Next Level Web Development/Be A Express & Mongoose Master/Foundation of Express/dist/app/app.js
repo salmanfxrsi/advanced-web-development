@@ -4,32 +4,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const fs_1 = __importDefault(require("fs"));
-const path_1 = __importDefault(require("path"));
+const todos_routes_1 = require("./todos/todos.routes");
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
-const todosRouter = express_1.default.Router();
-app.use("/todos", todosRouter);
-todosRouter.get("/all-todos", (req, res) => {
-    const data = fs_1.default.readFileSync(filePath, { encoding: "utf-8" });
-    res.json({
-        message: "From Todos Router",
-        data,
-    });
-});
-const filePath = path_1.default.join(__dirname, "../../db/todo.json");
+app.use("/todos", todos_routes_1.todosRouter);
 app.get("/", (req, res) => {
     res.send("Hello, Welcome To Todos App!");
-});
-app.get("/todos/:id", (req, res) => {
-    const data = fs_1.default.readFileSync(filePath, { encoding: "utf-8" });
-    console.log(req.params);
-    console.log(req.query);
-    res.json(data);
-});
-app.post("/todos/create-todo", (req, res) => {
-    const { title, description, createdTime } = req.body;
-    res.send("Hello World!");
 });
 exports.default = app;
 //# sourceMappingURL=app.js.map
