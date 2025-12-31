@@ -11,8 +11,10 @@ app.get("/", (req: Request, res: Response) => {
   res.send("Hello, Welcome To Todos App!");
 });
 
-app.get("/todos", (req: Request, res: Response) => {
+app.get("/todos/:id", (req: Request, res: Response) => {
   const data = fs.readFileSync(filePath, { encoding: "utf-8" });
+  console.log(req.params);
+  console.log(req.query);
   res.json(data);
 });
 
