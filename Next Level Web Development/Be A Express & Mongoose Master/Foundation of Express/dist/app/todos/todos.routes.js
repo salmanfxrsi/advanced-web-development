@@ -36,9 +36,14 @@ exports.todosRouter.post("/create-todo", async (req, res) => {
     });
     res.json(data);
 });
-exports.todosRouter.put("/update-todo/:title", (req, res) => {
-    const { title, description, createdTime } = req.body;
-    res.send("Hello World!");
+exports.todosRouter.put("/update-todo/:id", async (req, res) => {
+    const id = req.params.id;
+    const db = await mongodb_1.client.db("todosDB");
+    const collection = await db.collection("todos");
+    const filter = { _id: new mongodb_2.ObjectId(id) };
+    const { title, description, priority, isCompleted } = req.body;
+    const updateTodo = await collection.updateOne(filter, { $set: { title, description, priority, isCompleted } }, { upsert: true });
+    res.json(updateTodo);
 });
 exports.todosRouter.delete("/delete-todo/:id", async (req, res) => {
     const id = req.params.id;
