@@ -6,12 +6,22 @@ const getProducts = async (req: Request, res: Response) => {
 };
 
 const postProducts = async (req: Request, res: Response) => {
-    const newProduct = req.body;
-    products.push(newProduct);
-    res.status(200).json(products);
+  const newProduct = req.body;
+  products.push(newProduct);
+  res.status(200).json(products);
+};
+
+const updateProducts = async (req: Request, res: Response) => {
+  const id = req.params.id;
+  const Pid = Number(id);
+  const update = req.body.name;
+  const findIndex = products.findIndex((p) => p.id === Pid);
+  products[findIndex].name = update;
+  res.status(200).json(products);
 };
 
 export const productHandler = {
   getProducts,
   postProducts,
+  updateProducts,
 };

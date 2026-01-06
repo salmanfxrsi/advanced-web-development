@@ -9,5 +9,6 @@ router.get("/", (req: Request, res: Response) => {
 
 router.get("/products", productHandler.getProducts);
 router.post("/products", productHandler.postProducts);
+router.put("/products/:id", productHandler.updateProducts);
 
 export default router;
